@@ -1,0 +1,12 @@
+.github
+src
+test
+.eslintrc.cjs
+.gitignore
+.npmignore
+.npmrc
+CODE_OF_CONDUCT.md
+CONTRIBUTING.md
+tsconfig.json
+vitest.config.ts
+vitest.setup.ts

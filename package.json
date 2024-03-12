@@ -1,0 +1,40 @@
+{
+  "name": "remix-paraglidejs",
+  "version": "1.0.0",
+  "description": "remix utils and examples to work with paraglidejs",
+  "main": "index.js",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "prepare": "npm run build",
+    "build": "tsc --project tsconfig.json --outDir ./build",
+    "typecheck": "tsc --project tsconfig.json --noEmit",
+    "lint": "eslint --ext .ts,.tsx src/",
+    "test": "vitest --run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/BRIKEV/remix-paraglidejs.git"
+  },
+  "keywords": [
+    "remix",
+    "paraglidejs",
+    "i18n"
+  ],
+  "author": "BRIKEV (https://github.com/brikev)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BRIKEV/remix-paraglidejs/issues"
+  },
+  "homepage": "https://github.com/BRIKEV/remix-paraglidejs#readme",
+  "devDependencies": {
+    "@types/node": "^20.11.26",
+    "eslint": "^8.57.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.2",
+    "vitest": "^1.3.1"
+  }
+}

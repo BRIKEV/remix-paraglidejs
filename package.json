@@ -6,6 +6,11 @@
   "engines": {
     "node": ">=18.0.0"
   },
+  "exports": {
+    "./package.json": "./package.json",
+    "./client": "./build/client.js",
+    "./server": "./build/server.js"
+  },
   "scripts": {
     "prepare": "npm run build",
     "build": "tsc --project tsconfig.json --outDir ./build",

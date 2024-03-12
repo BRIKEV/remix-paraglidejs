@@ -10,12 +10,18 @@ export const getLang = async <T extends string>(request: Request, cookie: Cookie
   return value as T;
 };
 
-export const getContextLang = async <T extends string>(context: EntryContext, availableLanguageTags: readonly T[], defaultValue: T) => {
-  let lang = defaultValue;
+interface Options<T> {
+  availableLanguages: readonly T[];
+  defaultValue: T;
+  urlParam: string;
+}
+
+export const getContextLang = async <T extends string>(context: EntryContext, options: Options<T>) => {
+  let lang = options.defaultValue;
   const matches = context.staticHandlerContext.matches;
-  const hasLangParamIndex = matches.findIndex(match => availableLanguageTags.includes(match.params["lang"] as T));
+  const hasLangParamIndex = matches.findIndex(match => options.availableLanguages.includes(match.params[options.urlParam] as T));
   if (hasLangParamIndex > -1) {
-    lang = matches[hasLangParamIndex].params["lang"] as T ?? defaultValue;
+    lang = matches[hasLangParamIndex].params[options.urlParam] as T ?? options.defaultValue;
   }
   return lang;
 };

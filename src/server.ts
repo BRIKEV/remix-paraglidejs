@@ -16,7 +16,7 @@ interface Options<T> {
   urlParam: string;
 }
 
-export const getContextLang = async <T extends string>(context: EntryContext, options: Options<T>) => {
+export const getContextLang = <T extends string>(context: EntryContext, options: Options<T>) => {
   let lang = options.defaultValue;
   const matches = context.staticHandlerContext.matches;
   const hasLangParamIndex = matches.findIndex(match => options.availableLanguages.includes(match.params[options.urlParam] as T));

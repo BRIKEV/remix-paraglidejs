@@ -6,10 +6,11 @@
   "engines": {
     "node": ">=18.0.0"
   },
+  "type": "module",
   "exports": {
     "./package.json": "./package.json",
-    "./client": "./build/client.js",
-    "./server": "./build/server.js"
+    "./client": "./build/src/client.js",
+    "./server": "./build/src/server.js"
   },
   "scripts": {
     "prepare": "npm run build",

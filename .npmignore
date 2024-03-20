@@ -10,3 +10,5 @@ CONTRIBUTING.md
 tsconfig.json
 vitest.config.ts
 vitest.setup.ts
+examples
+LICENSE.md

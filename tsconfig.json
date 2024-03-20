@@ -21,6 +21,6 @@
     "outDir": "./build",
     "types": ["node"]
   },
-  "exclude": ["node_modules", "build", "**/*.spec.ts"],
+  "exclude": ["node_modules", "build", "examples"],
   "include": ["src/**/*.ts"]
 }

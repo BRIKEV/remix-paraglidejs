@@ -19,7 +19,7 @@
     "lint": "eslint --ext .ts,.tsx src/",
     "test": "vitest --run",
     "test:watch": "vitest",
-    "test:coverage": "vitest --coverage"
+    "test:coverage": "vitest --coverage --run"
   },
   "repository": {
     "type": "git",
@@ -38,6 +38,7 @@
   "homepage": "https://github.com/BRIKEV/remix-paraglidejs#readme",
   "devDependencies": {
     "@types/node": "^20.11.26",
+    "@vitest/coverage-istanbul": "^1.4.0",
     "eslint": "^8.57.0",
     "happy-dom": "^14.1.2",
     "ts-node": "^10.9.2",

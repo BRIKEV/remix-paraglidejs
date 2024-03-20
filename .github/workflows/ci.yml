@@ -23,19 +23,19 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: npm ci
       - run: npm test
-  # coverage:
-  #   name: coverage
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #   - uses: actions/checkout@master
-  #   - uses: actions/setup-node@master
-  #     with:
-  #       node-version: '20'
-  #   - run: npm ci
-  #   - uses: paambaati/codeclimate-action@v2.6.0
-  #     env:
-  #       CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
-  #     with:
-  #       coverageCommand: npm test -- --coverage
-  #       coverageLocations: |
-  #         ${{github.workspace}}/coverage/lcov.info:lcov
+  coverage:
+    name: coverage
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - uses: actions/setup-node@master
+      with:
+        node-version: '20'
+    - run: npm ci
+    - uses: paambaati/codeclimate-action@v2.6.0
+      env:
+        CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
+      with:
+        coverageCommand: npm test -- --coverage
+        coverageLocations: |
+          ${{github.workspace}}/coverage/lcov.info:lcov

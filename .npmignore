@@ -12,3 +12,4 @@ vitest.config.ts
 vitest.setup.ts
 examples
 LICENSE.md
+coverage

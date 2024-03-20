@@ -1,5 +1,9 @@
 # Remix-paraglidejs
 
+[![CI](https://github.com/BRIKEV/remix-paraglidejs/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/BRIKEV/remix-paraglidejs/actions/workflows/ci.yml)
+[![Maintainability](https://api.codeclimate.com/v1/badges/c87cad92a1de39d294bb/maintainability)](https://codeclimate.com/github/BRIKEV/remix-paraglidejs/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/c87cad92a1de39d294bb/test_coverage)](https://codeclimate.com/github/BRIKEV/remix-paraglidejs/test_coverage)
+
 Translate your Remix apps with [ParaglideJS](https://inlang.com/m/gerre34r/library-inlang-paraglideJs).
 
 This dependency includes utilities that will help you set up your Remix app to use ParaglideJS.
@@ -218,6 +222,8 @@ function handleBrowserRequest(
 }
 ```
 
+**Remix route usage**
+
 Once you have these files modified you can include your route for example the `_index.tsx` as `($lang)._index.tsx`, and use Paraglide.
 
 ```tsx
@@ -250,3 +256,5 @@ export default function Index() {
 ```
 
 *Recommendation:* Install [Sherlock extension](https://marketplace.visualstudio.com/items?itemName=inlang.vs-code-extension).
+
+Check out our [examples](https://github.com/BRIKEV/remix-paraglidejs/tree/main/examples).

@@ -1,5 +1,8 @@
-import { hydrateLang } from '../src/client';
-import { test, expect } from 'vitest';
+import { test, expect, vitest, vi } from 'vitest';
+import { useParams } from "@remix-run/react";
+import { hydrateLang, useParamsLang } from '../src/client';
+
+vi.mock("@remix-run/react");
 
 test('hydrateLang - language from cookie is available', () => {
   // Mock document.cookie
@@ -25,4 +28,26 @@ test('hydrateLang - language from cookie is not available', () => {
   // Test when the language from the cookie is not available in the availableLanguageTags array
   let result = hydrateLang('lang', ['abc', 'def']);
   expect(result).toBe('abc');
+});
+
+test('useParamsLang - language from params is available', () => {
+  // Mock useParams
+  vi.mocked(useParams).mockReturnValue({ lang: 'en' });
+
+  const availableLanguageTags = ['en', 'fr', 'de'];
+
+  // Test when the language from the params is available in the availableLanguageTags array
+  const result = useParamsLang('lang', availableLanguageTags, 'default');
+  expect(result).toBe('en');
+});
+
+test('useParamsLang - language from params is not available', () => {
+  // Mock useParams
+  vi.mocked(useParams).mockReturnValue({});
+
+  const availableLanguageTags = ['en', 'fr', 'de'];
+
+  // Test when the language from the params is not available in the availableLanguageTags array
+  const result = useParamsLang('lang', availableLanguageTags, 'default');
+  expect(result).toBe('default');
 });

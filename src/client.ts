@@ -13,8 +13,9 @@ export const hydrateLang = <T extends string>(key: string, availableLanguageTags
   return availableLanguageTags[0];
 };
 
-export const useParamsLang = <T extends string>(availableLanguageTags: readonly T[], defaultValue: T) => {
+export const useParamsLang = <T extends string>(key: string, availableLanguageTags: readonly T[], defaultValue: T) => {
   const data = useParams();
-  const findLang = availableLanguageTags.find((lang) => lang === data.lang);
+  if (!data || !data[key]) return defaultValue;
+  const findLang = availableLanguageTags.find((lang) => lang === data[key]);
   return findLang ?? defaultValue;
 };

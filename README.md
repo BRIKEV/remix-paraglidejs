@@ -227,6 +227,7 @@ function handleBrowserRequest(
 Once you have these files modified you can include your route for example the `_index.tsx` as `($lang)._index.tsx`, and use Paraglide.
 
 ```tsx
+import { Link } from '@remix-run/react';
 import * as m from '<YOUR_PARAGLIDE_DIR>/messages';
 
 export default function Index() {
@@ -236,18 +237,20 @@ export default function Index() {
       <p>{m.description()}</p>
       <ul>
         <li>
-          <a
-            href="/en"
+          <Link
+            to="/en"
+            reloadDocument
           >
             EN
-          </a>
+          </Link>
         </li>
         <li>
-          <a
-            href="/es"
+          <Link
+            to="/es"
+            reloadDocument
           >
             ES
-          </a>
+          </Link>
         </li>
       </ul>
     </div>
@@ -255,6 +258,6 @@ export default function Index() {
 }
 ```
 
-*Recommendation:* Install [Sherlock extension](https://marketplace.visualstudio.com/items?itemName=inlang.vs-code-extension).
+Check out our [examples](https://github.com/BRIKEV/remix-paraglidejs/tree/main/examples) to review how to use links without reloadDocument or a page without the `($lang)`.
 
-Check out our [examples](https://github.com/BRIKEV/remix-paraglidejs/tree/main/examples).
+*Recommendation:* Install [Sherlock extension](https://marketplace.visualstudio.com/items?itemName=inlang.vs-code-extension).

@@ -7,12 +7,14 @@
 import { RemixBrowser } from "@remix-run/react";
 import { startTransition, StrictMode } from "react";
 import { hydrateRoot } from "react-dom/client";
-import { hydrateLang } from '../../../src/client';
+import { hydrateLang } from 'remix-paraglidejs/client';
 import { availableLanguageTags, setLanguageTag } from "../paraglide/runtime";
 
 startTransition(() => {
   const lang = hydrateLang('language-tag', availableLanguageTags);
   setLanguageTag(lang);
+  console.log('Hydrate lang:', lang);
+  
   hydrateRoot(
     document,
     <StrictMode>

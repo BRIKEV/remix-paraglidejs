@@ -8,9 +8,8 @@ import {
 import { useParamsLang } from 'remix-paraglidejs/client';
 import { setLanguageTag, availableLanguageTags, sourceLanguageTag } from "../paraglide/runtime";
 
-
 export function Layout({ children }: { children: React.ReactNode }) {
-  const lang = useParamsLang(availableLanguageTags, sourceLanguageTag);
+  const lang = useParamsLang('lang', availableLanguageTags, sourceLanguageTag);
   setLanguageTag(lang);
   return (
     <html lang="es">

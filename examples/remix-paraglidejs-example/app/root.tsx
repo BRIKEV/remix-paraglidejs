@@ -4,15 +4,14 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
-  useParams,
 } from "@remix-run/react";
-import { setLanguageTag, availableLanguageTags } from "../paraglide/runtime";
+import { useParamsLang } from 'remix-paraglidejs/client';
+import { setLanguageTag, availableLanguageTags, sourceLanguageTag } from "../paraglide/runtime";
 
 
 export function Layout({ children }: { children: React.ReactNode }) {
-  const data = useParams();
-  const findLang = availableLanguageTags.find((lang) => lang === data.lang);
-  setLanguageTag(findLang ?? 'en');
+  const lang = useParamsLang(availableLanguageTags, sourceLanguageTag);
+  setLanguageTag(lang);
   return (
     <html lang="es">
       <head>

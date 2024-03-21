@@ -1,3 +1,5 @@
+import { useParams } from "@remix-run/react";
+
 export const hydrateLang = <T extends string>(key: string, availableLanguageTags: readonly T[]) => {
   // get cookie from the server
   const cookie = document.cookie;
@@ -9,4 +11,10 @@ export const hydrateLang = <T extends string>(key: string, availableLanguageTags
     return lang;
   }
   return availableLanguageTags[0];
+};
+
+export const useParamsLang = <T extends string>(availableLanguageTags: readonly T[], defaultValue: T) => {
+  const data = useParams();
+  const findLang = availableLanguageTags.find((lang) => lang === data.lang);
+  return findLang ?? defaultValue;
 };

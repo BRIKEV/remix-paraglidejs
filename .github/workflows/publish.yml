@@ -15,7 +15,7 @@ jobs:
           registry-url: https://registry.npmjs.org/
       # Install TypeScript and type definitions
       - name: Install dependencies
-        run: npm install typescript @types/node
+        run: npm install
 
       # Build TypeScript files
       - name: Build

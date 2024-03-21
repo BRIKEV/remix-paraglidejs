@@ -13,6 +13,14 @@ jobs:
         with:
           node-version: 20
           registry-url: https://registry.npmjs.org/
+      # Install TypeScript and type definitions
+      - name: Install dependencies
+        run: npm install typescript @types/node
+
+      # Build TypeScript files
+      - name: Build
+        run: npm run build
+
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

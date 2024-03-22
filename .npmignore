@@ -1,5 +1,4 @@
 .github
-src
 test
 .eslintrc.cjs
 .gitignore
@@ -7,9 +6,7 @@ test
 .npmrc
 CODE_OF_CONDUCT.md
 CONTRIBUTING.md
-tsconfig.json
 vitest.config.ts
 vitest.setup.ts
 examples
-LICENSE.md
 coverage

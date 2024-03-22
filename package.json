@@ -1,6 +1,6 @@
 {
   "name": "remix-paraglidejs",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "remix utils and examples to work with paraglidejs",
   "main": "index.js",
   "engines": {

@@ -45,7 +45,27 @@ export default defineConfig({
 });
 ```
 
-3. Now we need to modify the Remix entry files [entry.client.tsx](https://remix.run/docs/en/main/file-conventions/entry.client) and [entry.server.tsx](https://remix.run/docs/en/main/file-conventions/entry.server). If you don't see these files, use `npx remix reveal`.
+3. Include your messages folder with two files like these ones:
+
+`messages/en.js`
+```json
+{
+  "title": "Remix web example",
+  "description": "This is a simple example of how to use Remix to create a web app."
+}
+```
+
+`messages/es.js`
+```json
+{
+  "title": "Remix web de ejemplo",
+  "description": "Este es un ejemplo de una web de remix"
+}
+```
+
+4. Run `npm run dev` to generate the paraglide directory.
+
+5. Now we need to modify the Remix entry files [entry.client.tsx](https://remix.run/docs/en/main/file-conventions/entry.client) and [entry.server.tsx](https://remix.run/docs/en/main/file-conventions/entry.server). If you don't see these files, use `npx remix reveal`.
 
 ```tsx
 // entry.client.tsx

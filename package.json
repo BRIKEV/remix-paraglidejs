@@ -46,6 +46,7 @@
     "vitest": "^1.4.0"
   },
   "dependencies": {
+    "@inlang/paraglide-vite": "^1.2.40",
     "@remix-run/react": "^2.8.1",
     "@remix-run/server-runtime": "^2.8.1"
   }

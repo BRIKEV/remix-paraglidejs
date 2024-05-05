@@ -12,7 +12,7 @@
     "postinstall": "paraglide-js compile --project ./project.inlang"
   },
   "dependencies": {
-    "@inlang/paraglide-js-adapter-vite": "^1.2.23",
+    "@inlang/paraglide-vite": "^1.2.40",
     "@remix-run/node": "^2.8.1",
     "@remix-run/react": "^2.8.1",
     "@remix-run/serve": "^2.8.1",

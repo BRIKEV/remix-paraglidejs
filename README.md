@@ -15,7 +15,7 @@ Assuming you have a Remix app using Vite and have already set up Paraglide, foll
 1. Install the required packages:
 
 ```bash
-npm i --save remix-paraglidejs @inlang/paraglide-js-adapter-vite
+npm i --save remix-paraglidejs @inlang/paraglide-vite
 ```
 
 2. Modify vite.config.ts.
@@ -26,7 +26,7 @@ import { installGlobals } from "@remix-run/node";
 import { defineConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 /* --- INCLUDE THIS --- */
-import { paraglide } from "@inlang/paraglide-js-adapter-vite";
+import { paraglide } from "@inlang/paraglide-vite";
 /* ----------------- */
 
 installGlobals();
